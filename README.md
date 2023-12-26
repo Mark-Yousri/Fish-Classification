@@ -33,9 +33,3 @@ To run this project, you will need to download the dataset from [here] and unzip
 
 ## Results
 The project shows the training and validation accuracy and loss curves for each model, as well as some examples of correct and incorrect predictions. The best performing model is Xception, which achieves 96.75% validation accuracy and 0.4329 validation loss. The worst performing model is ResNet50, which achieves 73.96% validation accuracy and 0.7813 validation loss. The VGG19 model is in between, with 85.06% validation accuracy and 0.4874 validation loss.
-
-## Contributing
-Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTING.md) before getting started.
-
-## License
-This project is licensed under the terms of the MIT license. See the [LICENSE](LICENSE.md) file for details.
