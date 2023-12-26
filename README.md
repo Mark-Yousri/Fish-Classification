@@ -1,35 +1,14 @@
-Sure, here's a more detailed README file for your project:
+## Classification of marine animals
+The notebook aims to build and compare two models for classifying images of five types of marine animals: shark, jelly, whale, tuna, and fish.
 
-# Fish Classification Project
+## Data preparation
+The notebook imports various libraries and defines the train and validation directories. It uses ImageDataGenerator to augment the train data and rescale the val data. It creates train and val generators with a target size of 224 x 224 and a batch size of 32.
 
-## Table of Contents
-1. [Introduction](#introduction)
-2. [Requirements](#requirements)
-3. [Installation](#installation)
-4. [Usage](#usage)
-5. [Results](#results)
-6. [Contributing](#contributing)
-7. [License](#license)
+## ResNet50 model
+The notebook loads a pre-trained ResNet50 model without the top classification layers and freezes the convolutional layers. It adds a flatten layer, a dense layer with 256 units and relu activation, and a dense layer with 5 units and softmax activation. It compiles the model with Adam optimizer, categorical crossentropy loss, and accuracy metric. It trains the model for 10 epochs and plots the loss and accuracy curves.
 
-## Introduction
-This project is a demonstration of how to use different deep learning models to classify images of fish and other marine animals. The project uses three models: ResNet50, Xception, and VGG19, and compares their performance on a dataset of 1162 training images and 308 validation images belonging to 5 classes: fish, jelly, shark, tuna, and whale.
+## CNN model
+The notebook defines a custom CNN model with three convolutional layers, three max pooling layers, a flatten layer, a dense layer with 256 units and relu activation, and a dense layer with 5 units and softmax activation. It compiles the model with RMSprop optimizer, categorical crossentropy loss, and accuracy metric. It trains the model for 30 epochs with a reduce learning rate on plateau callback and plots the loss and accuracy curves.
 
-## Requirements
-To run this project, you will need the following libraries:
-
-- os
-- tensorflow
-- cv2
-- numpy
-- pandas
-- matplotlib
-- seaborn
-
-## Installation
-You can install the required libraries using pip:
-
-## Usage
-To run this project, you will need to download the dataset from [here] and unzip it in the same directory as the code. Then, you can open the `classification.ipynb` file in Google Colab or Jupyter Notebook and run the cells sequentially. The code will load the data, create the models, train them, and save them in the `kaggle/working` directory. You can also use the `classify_moves` function to test the models on new images.
-
-## Results
-The project shows the training and validation accuracy and loss curves for each model, as well as some examples of correct and incorrect predictions. The best performing model is Xception, which achieves 96.75% validation accuracy and 0.4329 validation loss. The worst performing model is ResNet50, which achieves 73.96% validation accuracy and 0.7813 validation loss. The VGG19 model is in between, with 85.06% validation accuracy and 0.4874 validation loss.
+## Conclusion
+This notebook provides a comprehensive guide to building and comparing two models for classifying images of marine animals. The ResNet50 model and the custom CNN model are both effective in achieving high accuracy on the validation set. The notebook demonstrates how to use Keras and TensorFlow to preprocess the data, build the models, train the models, and evaluate the models. It also shows how to visualize the training process and the performance metrics. The notebook can be used as a starting point for further research on marine animal classification or as a template for other image classification tasks.
